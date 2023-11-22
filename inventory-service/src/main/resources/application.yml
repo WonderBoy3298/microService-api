@@ -1,0 +1,26 @@
+server:
+    port: 0
+spring:
+    application:
+        name: 'inventory-service'
+
+    datasource:
+        password: ''
+        url: jdbc:mysql://localhost:3306/inventory
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
+
+
+management:
+    tracing:
+        sampling:
+            probability: 1.0

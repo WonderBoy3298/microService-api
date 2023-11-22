@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.SimpleTimeZone;
 
 
 @RestController
@@ -18,7 +19,7 @@ public class InventoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public  List<InventoryResponse> isInStock(@RequestParam("sku-code") List<String> skuCode){
+    public  List<InventoryResponse> isInStock(@RequestParam("skuCode") List<String> skuCode){
         return  inventoryService.isInStock(skuCode) ;
     }
 
@@ -28,6 +29,7 @@ public class InventoryController {
     public String test(){
         return "Service is working fine ";
     }
+
 
 
 }
